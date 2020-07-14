@@ -18,6 +18,7 @@ Public Class profAction
   Private Sub btnLabData_Click(sender As Object, e As EventArgs) Handles btnLabData.Click
     ' dgvUniversity.Visible = False
     dgvStudentView.Visible = False
+    newProfessor.Visible = False
     dgvData.Visible = True
   End Sub
   'button click will display all students currently in the database
