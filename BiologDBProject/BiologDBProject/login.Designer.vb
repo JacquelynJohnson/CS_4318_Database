@@ -69,6 +69,7 @@ Partial Class LoginForm
         '
         'txtPassword
         '
+        Me.txtPassword.AcceptsReturn = True
         Me.txtPassword.BackColor = System.Drawing.Color.Gainsboro
         Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.Location = New System.Drawing.Point(222, 147)

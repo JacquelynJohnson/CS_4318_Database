@@ -91,4 +91,10 @@ Public Class LoginForm
     lblError.Text = String.Empty
     txtUserID.Focus()
   End Sub
+
+  Private Sub txtPassword_KeyDown(sender As Object, ke As KeyEventArgs) Handles txtPassword.KeyDown 'allows the "Return/Enter" button to activate the login feature of the form
+    If (ke.KeyCode.Equals(Keys.Return)) Then
+      btnLogin_Click(sender, ke)
+    End If
+  End Sub
 End Class
