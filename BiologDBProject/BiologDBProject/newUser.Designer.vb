@@ -116,7 +116,7 @@ Partial Class newUser
         Me.btnCancel.Location = New System.Drawing.Point(209, 275)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancel.TabIndex = 7
+        Me.btnCancel.TabIndex = 8
         Me.btnCancel.Text = "&Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
@@ -212,6 +212,7 @@ Partial Class newUser
         Me.Controls.Add(Me.lblLName)
         Me.Controls.Add(Me.lblFName)
         Me.Name = "newUser"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Create New User"
         Me.ResumeLayout(False)
         Me.PerformLayout()

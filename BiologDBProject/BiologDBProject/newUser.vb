@@ -96,6 +96,8 @@ Public Class newUser
       mysqlConn.Close()
 
     End Try
+    Me.Close()
+    LoginForm.Show()
 
   End Sub
 

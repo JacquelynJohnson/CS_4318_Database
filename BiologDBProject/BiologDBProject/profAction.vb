@@ -2,6 +2,7 @@
 '05202020
 Imports MySql.Data.MySqlClient
 Public Class profAction
+
   Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
     Me.Close()  'close current form
     LoginForm.Close() 'close entire application
@@ -26,6 +27,8 @@ Public Class profAction
     dgvData.Visible = False
     ' dgvUniversity.Visible = False
     dgvStudentView.Visible = True
+    btn_newStudent.Visible = True
+    btn_delStudent.Visible = True
 
   End Sub
 
@@ -102,4 +105,31 @@ Public Class profAction
     Return actual
   End Function
 
+  Private Sub btn_newStudent_Click(sender As Object, e As EventArgs) Handles btn_newStudent.Click
+    Me.Close()
+    newUser.Show()
+  End Sub
+
+  Private Sub btn_delStudent_Click(sender As Object, e As EventArgs) Handles btn_delStudent.Click
+    Dim inReturn = InputBox("Please enter the Student ID you wish to delete: ")
+    Dim val As Integer
+    val = CInt(inReturn)
+
+    Try
+      Using mysqlConn As New MySqlConnection("server=localhost;userid=root;password=Quantum_2020;database=biolog")
+        mysqlConn.Open()  'open connection
+        Using query As New MySqlCommand("delete from student where `studentID` =@val", mysqlConn) 'sets the SQL command linked to the proper connection
+          query.Parameters.Add("@val", MySqlDbType.Int16).Value = val 'adds the value collected from the inputbox to the query as a parameter 
+          query.ExecuteNonQuery() 'executes the SQL statement
+        End Using
+        mysqlConn.Close() 'closes connection to DB
+      End Using
+
+    Catch ex As Exception
+      MessageBox.Show(ex.Message) 'will display error message if any
+
+    End Try
+    profAction_Load(e, e)
+
+  End Sub
 End Class

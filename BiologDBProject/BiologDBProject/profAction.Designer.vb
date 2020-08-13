@@ -72,6 +72,8 @@ Partial Class profAction
         Me.UniversityBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UniversityTableAdapter = New BiologDBProject.biologDataSetTableAdapters.universityTableAdapter()
         Me.DataTableAdapter = New BiologDBProject.biologDataSetTableAdapters.dataTableAdapter()
+        Me.btn_newStudent = New System.Windows.Forms.Button()
+        Me.btn_delStudent = New System.Windows.Forms.Button()
         Me.pnlButton.SuspendLayout()
         Me.pnlDisp.SuspendLayout()
         Me.newProfessor.SuspendLayout()
@@ -142,9 +144,9 @@ Partial Class profAction
         'pnlDisp
         '
         Me.pnlDisp.AutoScroll = True
-        Me.pnlDisp.Controls.Add(Me.newProfessor)
         Me.pnlDisp.Controls.Add(Me.dgvStudentView)
         Me.pnlDisp.Controls.Add(Me.dgvData)
+        Me.pnlDisp.Controls.Add(Me.newProfessor)
         Me.pnlDisp.Location = New System.Drawing.Point(247, 12)
         Me.pnlDisp.Name = "pnlDisp"
         Me.pnlDisp.Size = New System.Drawing.Size(567, 290)
@@ -497,6 +499,30 @@ Partial Class profAction
         '
         Me.DataTableAdapter.ClearBeforeFill = True
         '
+        'btn_newStudent
+        '
+        Me.btn_newStudent.AutoSize = True
+        Me.btn_newStudent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_newStudent.Location = New System.Drawing.Point(250, 308)
+        Me.btn_newStudent.Name = "btn_newStudent"
+        Me.btn_newStudent.Size = New System.Drawing.Size(111, 30)
+        Me.btn_newStudent.TabIndex = 9
+        Me.btn_newStudent.Text = "N&ew Student"
+        Me.btn_newStudent.UseVisualStyleBackColor = True
+        Me.btn_newStudent.Visible = False
+        '
+        'btn_delStudent
+        '
+        Me.btn_delStudent.AutoSize = True
+        Me.btn_delStudent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_delStudent.Location = New System.Drawing.Point(367, 308)
+        Me.btn_delStudent.Name = "btn_delStudent"
+        Me.btn_delStudent.Size = New System.Drawing.Size(127, 30)
+        Me.btn_delStudent.TabIndex = 10
+        Me.btn_delStudent.Text = "&Delete Student"
+        Me.btn_delStudent.UseVisualStyleBackColor = True
+        Me.btn_delStudent.Visible = False
+        '
         'profAction
         '
         Me.AccessibleDescription = "The purpose of this form is to allow a professor to add, modify, and view data."
@@ -505,6 +531,8 @@ Partial Class profAction
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDark
         Me.ClientSize = New System.Drawing.Size(826, 341)
+        Me.Controls.Add(Me.btn_delStudent)
+        Me.Controls.Add(Me.btn_newStudent)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.pnlDisp)
@@ -578,4 +606,6 @@ Partial Class profAction
     Friend WithEvents txtProfID As TextBox
     Friend WithEvents btnSubmit As Button
     Friend WithEvents btnNewProfessor As Button
+    Friend WithEvents btn_newStudent As Button
+    Friend WithEvents btn_delStudent As Button
 End Class
