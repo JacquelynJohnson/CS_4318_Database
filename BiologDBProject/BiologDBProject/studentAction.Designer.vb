@@ -23,115 +23,147 @@ Partial Class studentAction
   <System.Diagnostics.DebuggerStepThrough()> _
   Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.btnNewData = New System.Windows.Forms.Button()
-        Me.btnModifyData = New System.Windows.Forms.Button()
-        Me.btnViewData = New System.Windows.Forms.Button()
-        Me.btnQueryData = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnExit = New System.Windows.Forms.Button()
+        Me.btnSubmit = New System.Windows.Forms.Button()
         Me.ttpNewData = New System.Windows.Forms.ToolTip(Me.components)
         Me.ttpModData = New System.Windows.Forms.ToolTip(Me.components)
         Me.ttpViewData = New System.Windows.Forms.ToolTip(Me.components)
         Me.ttpQuery = New System.Windows.Forms.ToolTip(Me.components)
+        Me.rbtn_newData = New System.Windows.Forms.RadioButton()
+        Me.rbtn_modData = New System.Windows.Forms.RadioButton()
+        Me.rbtn_viewData = New System.Windows.Forms.RadioButton()
+        Me.rbtn_query = New System.Windows.Forms.RadioButton()
+        Me.rbtn_return = New System.Windows.Forms.RadioButton()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btn_exit = New System.Windows.Forms.Button()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'btnNewData
+        'btnSubmit
         '
-        Me.btnNewData.AutoSize = True
-        Me.btnNewData.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNewData.Location = New System.Drawing.Point(57, 66)
-        Me.btnNewData.Name = "btnNewData"
-        Me.btnNewData.Size = New System.Drawing.Size(120, 30)
-        Me.btnNewData.TabIndex = 0
-        Me.btnNewData.Text = "&New Lab Data"
-        Me.ttpNewData.SetToolTip(Me.btnNewData, "Click to add a new instance of lab data")
-        Me.btnNewData.UseVisualStyleBackColor = True
+        Me.btnSubmit.AutoSize = True
+        Me.btnSubmit.Enabled = False
+        Me.btnSubmit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSubmit.Location = New System.Drawing.Point(95, 193)
+        Me.btnSubmit.Name = "btnSubmit"
+        Me.btnSubmit.Size = New System.Drawing.Size(69, 30)
+        Me.btnSubmit.TabIndex = 1
+        Me.btnSubmit.Text = "&Submit"
+        Me.btnSubmit.UseVisualStyleBackColor = True
         '
-        'btnModifyData
+        'rbtn_newData
         '
-        Me.btnModifyData.AutoSize = True
-        Me.btnModifyData.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnModifyData.Location = New System.Drawing.Point(42, 128)
-        Me.btnModifyData.Name = "btnModifyData"
-        Me.btnModifyData.Size = New System.Drawing.Size(135, 30)
-        Me.btnModifyData.TabIndex = 1
-        Me.btnModifyData.Text = "&Modify Lab Data"
-        Me.ttpModData.SetToolTip(Me.btnModifyData, "Click to modify data of previous lab entry")
-        Me.btnModifyData.UseVisualStyleBackColor = True
+        Me.rbtn_newData.AutoSize = True
+        Me.rbtn_newData.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbtn_newData.Location = New System.Drawing.Point(30, 19)
+        Me.rbtn_newData.Name = "rbtn_newData"
+        Me.rbtn_newData.Size = New System.Drawing.Size(119, 22)
+        Me.rbtn_newData.TabIndex = 6
+        Me.rbtn_newData.TabStop = True
+        Me.rbtn_newData.Text = "New Lab Data"
+        Me.rbtn_newData.UseVisualStyleBackColor = True
         '
-        'btnViewData
+        'rbtn_modData
         '
-        Me.btnViewData.AutoSize = True
-        Me.btnViewData.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnViewData.Location = New System.Drawing.Point(258, 66)
-        Me.btnViewData.Name = "btnViewData"
-        Me.btnViewData.Size = New System.Drawing.Size(123, 30)
-        Me.btnViewData.TabIndex = 2
-        Me.btnViewData.Text = "&View Lab Data"
-        Me.ttpViewData.SetToolTip(Me.btnViewData, "Shows all lab data entries")
-        Me.btnViewData.UseVisualStyleBackColor = True
+        Me.rbtn_modData.AutoSize = True
+        Me.rbtn_modData.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbtn_modData.Location = New System.Drawing.Point(30, 42)
+        Me.rbtn_modData.Name = "rbtn_modData"
+        Me.rbtn_modData.Size = New System.Drawing.Size(133, 22)
+        Me.rbtn_modData.TabIndex = 7
+        Me.rbtn_modData.TabStop = True
+        Me.rbtn_modData.Text = "Modify Lab Data"
+        Me.rbtn_modData.UseVisualStyleBackColor = True
         '
-        'btnQueryData
+        'rbtn_viewData
         '
-        Me.btnQueryData.AutoSize = True
-        Me.btnQueryData.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnQueryData.Location = New System.Drawing.Point(258, 128)
-        Me.btnQueryData.Name = "btnQueryData"
-        Me.btnQueryData.Size = New System.Drawing.Size(103, 30)
-        Me.btnQueryData.TabIndex = 3
-        Me.btnQueryData.Text = "&Query Data"
-        Me.ttpQuery.SetToolTip(Me.btnQueryData, "Search data for patterns")
-        Me.btnQueryData.UseVisualStyleBackColor = True
+        Me.rbtn_viewData.AutoSize = True
+        Me.rbtn_viewData.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbtn_viewData.Location = New System.Drawing.Point(30, 65)
+        Me.rbtn_viewData.Name = "rbtn_viewData"
+        Me.rbtn_viewData.Size = New System.Drawing.Size(120, 22)
+        Me.rbtn_viewData.TabIndex = 8
+        Me.rbtn_viewData.TabStop = True
+        Me.rbtn_viewData.Text = "View Lab Data"
+        Me.rbtn_viewData.UseVisualStyleBackColor = True
         '
-        'Label1
+        'rbtn_query
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(139, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(177, 20)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Please Select an Action"
+        Me.rbtn_query.AutoSize = True
+        Me.rbtn_query.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbtn_query.Location = New System.Drawing.Point(30, 88)
+        Me.rbtn_query.Name = "rbtn_query"
+        Me.rbtn_query.Size = New System.Drawing.Size(101, 22)
+        Me.rbtn_query.TabIndex = 9
+        Me.rbtn_query.TabStop = True
+        Me.rbtn_query.Text = "Query Data"
+        Me.rbtn_query.UseVisualStyleBackColor = True
         '
-        'btnExit
+        'rbtn_return
         '
-        Me.btnExit.AutoSize = True
-        Me.btnExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExit.Location = New System.Drawing.Point(178, 214)
-        Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(75, 30)
-        Me.btnExit.TabIndex = 5
-        Me.btnExit.Text = "E&xit"
-        Me.btnExit.UseVisualStyleBackColor = True
+        Me.rbtn_return.AutoSize = True
+        Me.rbtn_return.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbtn_return.Location = New System.Drawing.Point(30, 112)
+        Me.rbtn_return.Name = "rbtn_return"
+        Me.rbtn_return.Size = New System.Drawing.Size(127, 22)
+        Me.rbtn_return.TabIndex = 10
+        Me.rbtn_return.TabStop = True
+        Me.rbtn_return.Text = "Return to Login"
+        Me.rbtn_return.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.rbtn_modData)
+        Me.GroupBox1.Controls.Add(Me.rbtn_return)
+        Me.GroupBox1.Controls.Add(Me.rbtn_newData)
+        Me.GroupBox1.Controls.Add(Me.rbtn_query)
+        Me.GroupBox1.Controls.Add(Me.rbtn_viewData)
+        Me.GroupBox1.Location = New System.Drawing.Point(65, 12)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(227, 175)
+        Me.GroupBox1.TabIndex = 0
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Select an action"
+        '
+        'btn_exit
+        '
+        Me.btn_exit.AutoSize = True
+        Me.btn_exit.Enabled = False
+        Me.btn_exit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_exit.Location = New System.Drawing.Point(197, 193)
+        Me.btn_exit.Name = "btn_exit"
+        Me.btn_exit.Size = New System.Drawing.Size(69, 30)
+        Me.btn_exit.TabIndex = 2
+        Me.btn_exit.Text = "Exit"
+        Me.btn_exit.UseVisualStyleBackColor = True
         '
         'studentAction
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.ClientSize = New System.Drawing.Size(463, 249)
-        Me.Controls.Add(Me.btnExit)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnQueryData)
-        Me.Controls.Add(Me.btnViewData)
-        Me.Controls.Add(Me.btnModifyData)
-        Me.Controls.Add(Me.btnNewData)
+        Me.ClientSize = New System.Drawing.Size(366, 240)
+        Me.Controls.Add(Me.btn_exit)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.btnSubmit)
         Me.Name = "studentAction"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Biolog Lab Data - Student View"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents btnNewData As Button
-    Friend WithEvents btnModifyData As Button
-    Friend WithEvents btnViewData As Button
-    Friend WithEvents btnQueryData As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents btnExit As Button
+    Friend WithEvents btnSubmit As Button
     Friend WithEvents ttpNewData As ToolTip
     Friend WithEvents ttpModData As ToolTip
     Friend WithEvents ttpViewData As ToolTip
     Friend WithEvents ttpQuery As ToolTip
+    Friend WithEvents rbtn_newData As RadioButton
+    Friend WithEvents rbtn_modData As RadioButton
+    Friend WithEvents rbtn_viewData As RadioButton
+    Friend WithEvents rbtn_query As RadioButton
+    Friend WithEvents rbtn_return As RadioButton
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents btn_exit As Button
 End Class

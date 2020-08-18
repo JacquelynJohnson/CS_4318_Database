@@ -22,3 +22,4 @@ C:\Users\18322\Desktop\databaseBiolog\CS_4318_Database\BiologDBProject\BiologDBP
 C:\Users\18322\Desktop\databaseBiolog\CS_4318_Database\BiologDBProject\BiologDBProject\bin\Debug\MySql.Data.xml
 C:\Users\18322\Desktop\databaseBiolog\CS_4318_Database\BiologDBProject\BiologDBProject\bin\Debug\Renci.SshNet.xml
 C:\Users\18322\Desktop\databaseBiolog\CS_4318_Database\BiologDBProject\BiologDBProject\obj\Debug\BiologDBProject.vbproj.CopyComplete
+C:\Users\18322\Desktop\databaseBiolog\CS_4318_Database\BiologDBProject\BiologDBProject\obj\Debug\BiologDBProject.viewData.resources
