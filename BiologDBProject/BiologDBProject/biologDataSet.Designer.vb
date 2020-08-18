@@ -3265,12 +3265,6 @@ Partial Public Class biologDataSet
         
         Private columnuniversityName As Global.System.Data.DataColumn
         
-        Private columncityName As Global.System.Data.DataColumn
-        
-        Private columnstateName As Global.System.Data.DataColumn
-        
-        Private columnzipCode As Global.System.Data.DataColumn
-        
         Private columnphoneNo As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3334,30 +3328,6 @@ Partial Public Class biologDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property cityNameColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columncityName
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property stateNameColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnstateName
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property zipCodeColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnzipCode
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public ReadOnly Property phoneNoColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnphoneNo
@@ -3401,9 +3371,9 @@ Partial Public Class biologDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AdduniversityRow(ByVal universityID As Integer, ByVal parentcityRowByIDCity As cityRow, ByVal universityName As String, ByVal cityName As String, ByVal stateName As String, ByVal zipCode As Integer, ByVal phoneNo As String) As universityRow
+        Public Overloads Function AdduniversityRow(ByVal universityID As Integer, ByVal parentcityRowByIDCity As cityRow, ByVal universityName As String, ByVal phoneNo As String) As universityRow
             Dim rowuniversityRow As universityRow = CType(Me.NewRow,universityRow)
-            Dim columnValuesArray() As Object = New Object() {universityID, Nothing, universityName, cityName, stateName, zipCode, phoneNo}
+            Dim columnValuesArray() As Object = New Object() {universityID, Nothing, universityName, phoneNo}
             If (Not (parentcityRowByIDCity) Is Nothing) Then
                 columnValuesArray(1) = parentcityRowByIDCity(0)
             End If
@@ -3438,9 +3408,6 @@ Partial Public Class biologDataSet
             Me.columnuniversityID = MyBase.Columns("universityID")
             Me.columncityID = MyBase.Columns("cityID")
             Me.columnuniversityName = MyBase.Columns("universityName")
-            Me.columncityName = MyBase.Columns("cityName")
-            Me.columnstateName = MyBase.Columns("stateName")
-            Me.columnzipCode = MyBase.Columns("zipCode")
             Me.columnphoneNo = MyBase.Columns("phoneNo")
         End Sub
         
@@ -3453,12 +3420,6 @@ Partial Public Class biologDataSet
             MyBase.Columns.Add(Me.columncityID)
             Me.columnuniversityName = New Global.System.Data.DataColumn("universityName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnuniversityName)
-            Me.columncityName = New Global.System.Data.DataColumn("cityName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columncityName)
-            Me.columnstateName = New Global.System.Data.DataColumn("stateName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnstateName)
-            Me.columnzipCode = New Global.System.Data.DataColumn("zipCode", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnzipCode)
             Me.columnphoneNo = New Global.System.Data.DataColumn("phoneNo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnphoneNo)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnuniversityID}, true))
@@ -3467,11 +3428,6 @@ Partial Public Class biologDataSet
             Me.columncityID.AllowDBNull = false
             Me.columnuniversityName.AllowDBNull = false
             Me.columnuniversityName.MaxLength = 45
-            Me.columncityName.AllowDBNull = false
-            Me.columncityName.MaxLength = 15
-            Me.columnstateName.AllowDBNull = false
-            Me.columnstateName.MaxLength = 15
-            Me.columnzipCode.AllowDBNull = false
             Me.columnphoneNo.AllowDBNull = false
             Me.columnphoneNo.MaxLength = 12
         End Sub
@@ -4444,39 +4400,6 @@ Partial Public Class biologDataSet
             End Get
             Set
                 Me(Me.tableuniversity.universityNameColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property cityName() As String
-            Get
-                Return CType(Me(Me.tableuniversity.cityNameColumn),String)
-            End Get
-            Set
-                Me(Me.tableuniversity.cityNameColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property stateName() As String
-            Get
-                Return CType(Me(Me.tableuniversity.stateNameColumn),String)
-            End Get
-            Set
-                Me(Me.tableuniversity.stateNameColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property zipCode() As Integer
-            Get
-                Return CType(Me(Me.tableuniversity.zipCodeColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableuniversity.zipCodeColumn) = value
             End Set
         End Property
         
@@ -9183,16 +9106,12 @@ Namespace biologDataSetTableAdapters
             tableMapping.ColumnMappings.Add("universityID", "universityID")
             tableMapping.ColumnMappings.Add("cityID", "cityID")
             tableMapping.ColumnMappings.Add("universityName", "universityName")
-            tableMapping.ColumnMappings.Add("cityName", "cityName")
-            tableMapping.ColumnMappings.Add("stateName", "stateName")
-            tableMapping.ColumnMappings.Add("zipCode", "zipCode")
             tableMapping.ColumnMappings.Add("phoneNo", "phoneNo")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM `university` WHERE ((`universityID` = @p1) AND (`cityID` = @p2) AND ("& _ 
-                "`universityName` = @p3) AND (`cityName` = @p4) AND (`stateName` = @p5) AND (`zip"& _ 
-                "Code` = @p6) AND (`phoneNo` = @p7))"
+                "`universityName` = @p3) AND (`phoneNo` = @p4))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.MySql.Data.MySqlClient.MySqlParameter = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
@@ -9223,37 +9142,13 @@ Namespace biologDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "cityName"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p5"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "stateName"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p6"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "zipCode"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p7"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
             param.SourceColumn = "phoneNo"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `university` (`universityID`, `cityID`, `universityName`, `cityName`,"& _ 
-                " `stateName`, `zipCode`, `phoneNo`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `university` (`universityID`, `cityID`, `universityName`, `phoneNo`) "& _ 
+                "VALUES (@p1, @p2, @p3, @p4)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
@@ -9284,40 +9179,14 @@ Namespace biologDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "cityName"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p5"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "stateName"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p6"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "zipCode"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p7"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
             param.SourceColumn = "phoneNo"
             param.SourceVersion = Global.System.Data.DataRowVersion.Current
             Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `university` SET `universityID` = @p1, `cityID` = @p2, `universityName` = "& _ 
-                "@p3, `cityName` = @p4, `stateName` = @p5, `zipCode` = @p6, `phoneNo` = @p7 WHERE"& _ 
-                " ((`universityID` = @p8) AND (`cityID` = @p9) AND (`universityName` = @p10) AND "& _ 
-                "(`cityName` = @p11) AND (`stateName` = @p12) AND (`zipCode` = @p13) AND (`phoneN"& _ 
-                "o` = @p14))"
+                "@p3, `phoneNo` = @p4 WHERE ((`universityID` = @p5) AND (`cityID` = @p6) AND (`un"& _ 
+                "iversityName` = @p7) AND (`phoneNo` = @p8))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
@@ -9348,35 +9217,11 @@ Namespace biologDataSetTableAdapters
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "cityName"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p5"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "stateName"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p6"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "zipCode"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p7"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
             param.SourceColumn = "phoneNo"
             param.SourceVersion = Global.System.Data.DataRowVersion.Current
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p8"
+            param.ParameterName = "@p5"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
@@ -9384,7 +9229,7 @@ Namespace biologDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p9"
+            param.ParameterName = "@p6"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
@@ -9392,7 +9237,7 @@ Namespace biologDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p10"
+            param.ParameterName = "@p7"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
@@ -9400,31 +9245,7 @@ Namespace biologDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p11"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "cityName"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p12"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "stateName"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p13"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "zipCode"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p14"
+            param.ParameterName = "@p8"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
@@ -9446,8 +9267,7 @@ Namespace biologDataSetTableAdapters
             Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(0) {}
             Me._commandCollection(0) = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT `universityID`, `cityID`, `universityName`, `cityName`, `stateName`, `zipC"& _ 
-                "ode`, `phoneNo` FROM `university`"
+            Me._commandCollection(0).CommandText = "SELECT universityID, cityID, universityName, phoneNo FROM university"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -9507,7 +9327,7 @@ Namespace biologDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal p1 As Integer, ByVal p2 As Integer, ByVal p3 As String, ByVal p4 As String, ByVal p5 As String, ByVal p6 As Integer, ByVal p7 As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal p1 As Integer, ByVal p2 As Integer, ByVal p3 As String, ByVal p4 As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(p1,Integer)
             Me.Adapter.DeleteCommand.Parameters(1).Value = CType(p2,Integer)
             If (p3 Is Nothing) Then
@@ -9519,17 +9339,6 @@ Namespace biologDataSetTableAdapters
                 Throw New Global.System.ArgumentNullException("p4")
             Else
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(p4,String)
-            End If
-            If (p5 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p5")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(p5,String)
-            End If
-            Me.Adapter.DeleteCommand.Parameters(5).Value = CType(p6,Integer)
-            If (p7 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p7")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(p7,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -9550,7 +9359,7 @@ Namespace biologDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal p1 As Integer, ByVal p2 As Integer, ByVal p3 As String, ByVal p4 As String, ByVal p5 As String, ByVal p6 As Integer, ByVal p7 As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal p1 As Integer, ByVal p2 As Integer, ByVal p3 As String, ByVal p4 As String) As Integer
             Me.Adapter.InsertCommand.Parameters(0).Value = CType(p1,Integer)
             Me.Adapter.InsertCommand.Parameters(1).Value = CType(p2,Integer)
             If (p3 Is Nothing) Then
@@ -9562,17 +9371,6 @@ Namespace biologDataSetTableAdapters
                 Throw New Global.System.ArgumentNullException("p4")
             Else
                 Me.Adapter.InsertCommand.Parameters(3).Value = CType(p4,String)
-            End If
-            If (p5 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p5")
-            Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(p5,String)
-            End If
-            Me.Adapter.InsertCommand.Parameters(5).Value = CType(p6,Integer)
-            If (p7 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p7")
-            Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(p7,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -9593,7 +9391,7 @@ Namespace biologDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal p1 As Integer, ByVal p2 As Integer, ByVal p3 As String, ByVal p4 As String, ByVal p5 As String, ByVal p6 As Integer, ByVal p7 As String, ByVal p8 As Integer, ByVal p9 As Integer, ByVal p10 As String, ByVal p11 As String, ByVal p12 As String, ByVal p13 As Integer, ByVal p14 As String) As Integer
+        Public Overloads Overridable Function Update(ByVal p1 As Integer, ByVal p2 As Integer, ByVal p3 As String, ByVal p4 As String, ByVal p5 As Integer, ByVal p6 As Integer, ByVal p7 As String, ByVal p8 As String) As Integer
             Me.Adapter.UpdateCommand.Parameters(0).Value = CType(p1,Integer)
             Me.Adapter.UpdateCommand.Parameters(1).Value = CType(p2,Integer)
             If (p3 Is Nothing) Then
@@ -9606,39 +9404,17 @@ Namespace biologDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = CType(p4,String)
             End If
-            If (p5 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p5")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(p5,String)
-            End If
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(p5,Integer)
             Me.Adapter.UpdateCommand.Parameters(5).Value = CType(p6,Integer)
             If (p7 Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("p7")
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(p7,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(p8,Integer)
-            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(p9,Integer)
-            If (p10 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p10")
+            If (p8 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p8")
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(p10,String)
-            End If
-            If (p11 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p11")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(p11,String)
-            End If
-            If (p12 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p12")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(p12,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(p13,Integer)
-            If (p14 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p14")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(p14,String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(p8,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -9659,8 +9435,8 @@ Namespace biologDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal p2 As Integer, ByVal p3 As String, ByVal p4 As String, ByVal p5 As String, ByVal p6 As Integer, ByVal p7 As String, ByVal p8 As Integer, ByVal p9 As Integer, ByVal p10 As String, ByVal p11 As String, ByVal p12 As String, ByVal p13 As Integer, ByVal p14 As String) As Integer
-            Return Me.Update(p8, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14)
+        Public Overloads Overridable Function Update(ByVal p2 As Integer, ByVal p3 As String, ByVal p4 As String, ByVal p5 As Integer, ByVal p6 As Integer, ByVal p7 As String, ByVal p8 As String) As Integer
+            Return Me.Update(p5, p2, p3, p4, p5, p6, p7, p8)
         End Function
     End Class
     

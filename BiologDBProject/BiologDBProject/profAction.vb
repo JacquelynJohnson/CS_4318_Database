@@ -17,16 +17,19 @@ Public Class profAction
   'button click that will display the contents of the lab data that is currently in the database
   'it will be displayed in the panel pnlDisp on the current form
   Private Sub btnLabData_Click(sender As Object, e As EventArgs) Handles btnLabData.Click
-    ' dgvUniversity.Visible = False
+    dgv_University.Visible = False
     dgvStudentView.Visible = False
     newProfessor.Visible = False
     dgvData.Visible = True
+    btn_delStudent.Visible = False
+    btn_newStudent.Visible = False
   End Sub
   'button click will display all students currently in the database
   Private Sub btnStudent_Click(sender As Object, e As EventArgs) Handles btnStudent.Click
     dgvData.Visible = False
-    ' dgvUniversity.Visible = False
+    dgv_University.Visible = False
     dgvStudentView.Visible = True
+    newProfessor.Visible = False
     btn_newStudent.Visible = True
     btn_delStudent.Visible = True
 
@@ -36,24 +39,34 @@ Public Class profAction
     'TODO: This line of code loads data into the 'BiologDataSet.data' table. You can move, or remove it, as needed.
     Me.DataTableAdapter.Fill(Me.BiologDataSet.data)
     'TODO: This line of code loads data into the 'BiologDataSet.university' table. You can move, or remove it, as needed.
-    ' Me.UniversityTableAdapter.Fill(Me.BiologDataSet.university)
+    Me.UniversityTableAdapter.Fill(Me.BiologDataSet.university)
     'TODO: This line of code loads data into the 'BiologDataSet.student' table. You can move, or remove it, as needed.
     Me.StudentTableAdapter.Fill(Me.BiologDataSet.student)
 
     popCbb()
+    btn_delStudent.Visible = False
+    btn_newStudent.Visible = False
 
   End Sub
 
   Private Sub btnUniv_Click(sender As Object, e As EventArgs) Handles btnUniv.Click
     dgvStudentView.Visible = False
     dgvData.Visible = False
-    ' dgvUniversity.Visible = True
+    newProfessor.Visible = False
+    dgv_University.Visible = True
+
+    btn_delStudent.Visible = False
+    btn_newStudent.Visible = False
   End Sub
 
   Private Sub btnNewProfessor_Click(sender As Object, e As EventArgs) Handles btnNewProfessor.Click
     dgvData.Visible = False
     dgvStudentView.Visible = False
+    dgv_University.Visible = False
     newProfessor.Visible = True
+
+    btn_delStudent.Visible = False
+    btn_newStudent.Visible = False
   End Sub
   'this button click will collect the input data from the text fields and insert them in the database
 
