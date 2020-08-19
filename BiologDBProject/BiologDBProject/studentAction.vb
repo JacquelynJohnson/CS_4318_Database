@@ -25,7 +25,9 @@
         Case 40
           MessageBox.Show("query data selected")
         Case 50
-          MessageBox.Show("return to login selected")
+          'MessageBox.Show("return to login selected")
+          Me.Close()
+          LoginForm.Show()
 
         Case Else
           MessageBox.Show("Error with select case statement")
@@ -62,6 +64,11 @@
   End Sub
 
   Private Sub btn_exit_Click(sender As Object, e As EventArgs) Handles btn_exit.Click
+    LoginForm.Close()
     Me.Close()
+  End Sub
+
+  Private Sub studentAction_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+    LoginForm.Close()
   End Sub
 End Class

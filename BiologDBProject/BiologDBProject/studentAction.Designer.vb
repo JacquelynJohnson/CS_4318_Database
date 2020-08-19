@@ -35,6 +35,7 @@ Partial Class studentAction
         Me.rbtn_return = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btn_exit = New System.Windows.Forms.Button()
+        Me.ttpReturn = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -43,10 +44,10 @@ Partial Class studentAction
         Me.btnSubmit.AutoSize = True
         Me.btnSubmit.Enabled = False
         Me.btnSubmit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSubmit.Location = New System.Drawing.Point(95, 193)
+        Me.btnSubmit.Location = New System.Drawing.Point(81, 139)
         Me.btnSubmit.Name = "btnSubmit"
         Me.btnSubmit.Size = New System.Drawing.Size(69, 30)
-        Me.btnSubmit.TabIndex = 1
+        Me.btnSubmit.TabIndex = 2
         Me.btnSubmit.Text = "&Submit"
         Me.btnSubmit.UseVisualStyleBackColor = True
         '
@@ -58,8 +59,9 @@ Partial Class studentAction
         Me.rbtn_newData.Name = "rbtn_newData"
         Me.rbtn_newData.Size = New System.Drawing.Size(119, 22)
         Me.rbtn_newData.TabIndex = 6
-        Me.rbtn_newData.TabStop = True
         Me.rbtn_newData.Text = "New Lab Data"
+        Me.ttpNewData.SetToolTip(Me.rbtn_newData, "Select to add a new entry to lab data table")
+        Me.rbtn_newData.UseMnemonic = False
         Me.rbtn_newData.UseVisualStyleBackColor = True
         '
         'rbtn_modData
@@ -72,6 +74,7 @@ Partial Class studentAction
         Me.rbtn_modData.TabIndex = 7
         Me.rbtn_modData.TabStop = True
         Me.rbtn_modData.Text = "Modify Lab Data"
+        Me.ttpModData.SetToolTip(Me.rbtn_modData, "Select to modify existing lab record")
         Me.rbtn_modData.UseVisualStyleBackColor = True
         '
         'rbtn_viewData
@@ -84,6 +87,7 @@ Partial Class studentAction
         Me.rbtn_viewData.TabIndex = 8
         Me.rbtn_viewData.TabStop = True
         Me.rbtn_viewData.Text = "View Lab Data"
+        Me.ttpViewData.SetToolTip(Me.rbtn_viewData, "Select to only view selected lab data")
         Me.rbtn_viewData.UseVisualStyleBackColor = True
         '
         'rbtn_query
@@ -96,6 +100,7 @@ Partial Class studentAction
         Me.rbtn_query.TabIndex = 9
         Me.rbtn_query.TabStop = True
         Me.rbtn_query.Text = "Query Data"
+        Me.ttpQuery.SetToolTip(Me.rbtn_query, "Select to query data across records")
         Me.rbtn_query.UseVisualStyleBackColor = True
         '
         'rbtn_return
@@ -108,12 +113,14 @@ Partial Class studentAction
         Me.rbtn_return.TabIndex = 10
         Me.rbtn_return.TabStop = True
         Me.rbtn_return.Text = "Return to Login"
+        Me.ttpReturn.SetToolTip(Me.rbtn_return, "Return to login screen")
         Me.rbtn_return.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.rbtn_modData)
         Me.GroupBox1.Controls.Add(Me.rbtn_return)
+        Me.GroupBox1.Controls.Add(Me.btnSubmit)
         Me.GroupBox1.Controls.Add(Me.rbtn_newData)
         Me.GroupBox1.Controls.Add(Me.rbtn_query)
         Me.GroupBox1.Controls.Add(Me.rbtn_viewData)
@@ -127,12 +134,11 @@ Partial Class studentAction
         'btn_exit
         '
         Me.btn_exit.AutoSize = True
-        Me.btn_exit.Enabled = False
         Me.btn_exit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_exit.Location = New System.Drawing.Point(197, 193)
+        Me.btn_exit.Location = New System.Drawing.Point(146, 193)
         Me.btn_exit.Name = "btn_exit"
         Me.btn_exit.Size = New System.Drawing.Size(69, 30)
-        Me.btn_exit.TabIndex = 2
+        Me.btn_exit.TabIndex = 1
         Me.btn_exit.Text = "Exit"
         Me.btn_exit.UseVisualStyleBackColor = True
         '
@@ -144,7 +150,6 @@ Partial Class studentAction
         Me.ClientSize = New System.Drawing.Size(366, 240)
         Me.Controls.Add(Me.btn_exit)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.btnSubmit)
         Me.Name = "studentAction"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Biolog Lab Data - Student View"
@@ -166,4 +171,5 @@ Partial Class studentAction
     Friend WithEvents rbtn_return As RadioButton
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btn_exit As Button
+    Friend WithEvents ttpReturn As ToolTip
 End Class
